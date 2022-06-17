@@ -10,6 +10,7 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="/dist/out.css" rel="stylesheet">
     <title>ADR Power Systems</title>
 </head>
@@ -21,9 +22,9 @@
                 <video autoplay muted loop class="z-0 md:w-full md:h-auto h-full w-auto brightness-50"
                     src="./assets/image/videos/out.webm">
                 </video>
-                <div class="sticky md:absolute md:left-1/4 md:right-1/4 order-first">
+                <div class="absolute left-1/4 right-1/4">
                     <div
-                        class="flex justify-center flex-shrink flex-col md:flex-row bg-sky-900 items-center md:rounded-b-md drop-shadow-lg">
+                        class="flex justify-start flex-shrink flex-col md:flex-row bg-transparent items-center md:rounded-b-md drop-shadow-lg">
                         <div class="flex-none md:w-1/6 w-1/3 m-8">
                             <img class="invert" src="./assets/image/logo.webp" alt="">
                         </div>
@@ -32,21 +33,21 @@
                         <div id="nav" class="flex flex-wrap flex-initial justify-center">
                             <div class="flex-initial my-4 mx-8">
                                 <span
-                                    class="underline decoration-2 underline-offset-8 transition-all hover:underline-offset-4 cursor-pointer font-sans font-bold text-slate-100">HOME</span>
+                                    class="cursor-pointer font-sans font-bold text-slate-100">Home</span>
                             </div>
                             <div class="flex-initial my-4 mx-8">
                                 <span
-                                    class="underline decoration-2 underline-offset-8 transition-all hover:underline-offset-4 cursor-pointer font-sans font-bold text-slate-100">ABOUT</span>
+                                    class="cursor-pointer font-sans font-bold text-slate-100">About</span>
                             </div>
                             <div class="flex-initial my-4 mx-8">
                                 <a href="/parts.html">
                                     <span
-                                        class="underline decoration-2 underline-offset-8 transition-all hover:underline-offset-4 cursor-pointer font-sans font-bold text-slate-100">PARTS</span>
+                                        class="cursor-pointer font-sans font-bold text-slate-100">Parts</span>
                                 </a>
                             </div>
                             <div class="flex-initial my-4 mx-8">
                                 <span
-                                    class="underline decoration-2 underline-offset-8 transition-all hover:underline-offset-4 cursor-pointer font-sans font-bold text-slate-100">SALES</span>
+                                    class="cursor-pointer font-sans font-bold text-slate-100">Sales</span>
                             </div>
                             <div class="flex-initial md:mx-8">
                             </div>
@@ -56,9 +57,9 @@
             </div>
         </div>
         <div
-            class="flex flex-col md:flex-row justify-around bg-sky-900 flex-initial md:p-16 md:m-16 p-4 m-4 shadow-2xl rounded-md">
+            class="flex flex-col md:flex-row gap-6 justify-around bg-sky-900 flex-initial md:p-16 md:m-16 p-4 m-4 shadow-2xl rounded-md">
             <div class="flex-initial flex flex-col justify-center gap-4 basis-1/2 my-8">
-                <h1 class="font-serif text-slate-100 text-3xl md:text-6xl flex-initial">Who We Are</h1>
+                <h1 class="font-serif text-slate-100 text-3xl md:text-6xl flex-initial text-center md:text-left">Who We Are</h1>
                 <div class="flex-initial">
                     <img src="./assets/image/coworkers.jpg">
                 </div>
