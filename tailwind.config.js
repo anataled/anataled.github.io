@@ -6,7 +6,8 @@ module.exports = {
       sans: ['"Merriweather Sans"', 'sans-serif'],
       serif: ['"Merriweather"', 'serif']
     },
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 }
