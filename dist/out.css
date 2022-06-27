@@ -576,6 +576,22 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.z-10{
+  z-index: 10;
+}
+
+.z-30{
+  z-index: 30;
+}
+
 .order-first{
   order: -9999;
 }
@@ -614,6 +630,11 @@ video {
   margin-right: 2.5rem;
 }
 
+.-my-20{
+  margin-top: -5rem;
+  margin-bottom: -5rem;
+}
+
 .mr-3{
   margin-right: 0.75rem;
 }
@@ -632,6 +653,10 @@ video {
 
 .table{
   display: table;
+}
+
+.hidden{
+  display: none;
 }
 
 .h-auto{
@@ -662,12 +687,24 @@ video {
   width: 83.333333%;
 }
 
+.w-5\/6{
+  width: 83.333333%;
+}
+
+.w-full{
+  width: 100%;
+}
+
 .max-w-full{
   max-width: 100%;
 }
 
 .flex-initial{
   flex: 0 1 auto;
+}
+
+.flex-1{
+  flex: 1 1 0%;
 }
 
 .flex-shrink{
@@ -712,6 +749,10 @@ video {
 
 .justify-center{
   justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
 }
 
 .justify-around{
@@ -822,8 +863,24 @@ video {
   padding: 3.5rem;
 }
 
+.p-16{
+  padding: 4rem;
+}
+
+.text-left{
+  text-align: left;
+}
+
 .text-center{
   text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.align-middle{
+  vertical-align: middle;
 }
 
 .font-sans{
@@ -854,6 +911,21 @@ video {
   line-height: 2.5rem;
 }
 
+.text-9xl{
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-7xl{
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-5xl{
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -876,6 +948,18 @@ video {
 
 .leading-8{
   line-height: 2rem;
+}
+
+.leading-loose{
+  line-height: 2;
+}
+
+.leading-10{
+  line-height: 2.5rem;
+}
+
+.leading-7{
+  line-height: 1.75rem;
 }
 
 .text-slate-100{
@@ -996,12 +1080,24 @@ video {
     margin-right: 14rem;
   }
 
+  .lg\:block{
+    display: block;
+  }
+
+  .lg\:hidden{
+    display: none;
+  }
+
   .lg\:w-1\/6{
     width: 16.666667%;
   }
 
   .lg\:flex-row{
     flex-direction: row;
+  }
+
+  .lg\:justify-center{
+    justify-content: center;
   }
 
   .lg\:rounded-lg{
@@ -1024,6 +1120,16 @@ video {
   .lg\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .lg\:text-7xl{
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .lg\:text-8xl{
+    font-size: 6rem;
+    line-height: 1;
   }
 }
 
