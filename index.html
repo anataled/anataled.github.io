@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div x-show="menu" x-transition class="flex flex-col gap-[2rem] text-3xl justify-center items-center h-full w-full fixed top-0 left-0 z-50 bg-gray-900">
+        <div x-show="menu" x-transition class="flex flex-col gap-[2.75rem] text-3xl justify-center items-center h-full w-full fixed top-0 left-0 z-50 bg-gray-900">
             <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">Home</h1>
             <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">About</h1>
             <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">Parts</h1>
@@ -50,7 +50,7 @@
             <i @click="menu = !menu" class="text-slate-100 fa-solid fa-circle-xmark text-5xl cursor-pointer"></i>
         </div>
         <div class="flex-initial flex -my-10 m-0 xl:mx-24 xl:px-16 justify-center h-screen">
-            <video autoplay muted loop class="absolute w-full h-5/6 rounded-none lg:rounded-lg brightness-50 object-cover z-10">
+            <video defaultMuted playsinline  oncontextmenu="return false;"  preload="auto" autoplay muted loop class="absolute w-full h-5/6 rounded-none lg:rounded-lg brightness-50 object-cover z-10">
                 <source src="./assets/image/videos/out.webm" type="video/webm">
                 <source src="./assets/image/videos/out.mp4" type="video/mp4">
             </video>
