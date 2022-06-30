@@ -17,8 +17,8 @@
 
 <body>
     <div x-data="{ search: '', entries: [], get filtered() { return this.entries.filter(i => JSON.stringify(i).toLowerCase().includes(this.search)) } }"
-        x-init="fetch('https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/Waterjets').then(res => res.json()).then(res => entries = res)"
-        class="flex gap-24 flex-col">
+        x-init="fetch('https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/Transmissions').then(res => res.json()).then(res => entries = res)"
+        class="flex flex-col">
         <div class="flex-initial flex flex-col order-first">
             <div
                 class="flex flex-shrink flex-col md:flex-row justify-start items-baseline drop-shadow-lg bg-gradient-to-tr from-sky-700 to-blue-900">
@@ -45,14 +45,14 @@
                 </div>
             </div>
         </div>
-        <div class="flex-initial text-center flex flex-col lg:flex-row justify-center mx-24 gap-14">
-            <h1 class="text-4xl font-serif capitalize basis-1/2">Waterjet Engines</h1>
+        <div class="flex-initial text-center flex flex-col lg:flex-row justify-center mx-24">
+            <h1 class="text-4xl font-serif capitalize basis-1/2">Transmissions</h1>
             <div class="flex justify-start items-center relative basis-1/2">
             <input x-model="search" class="text-sm leading-none text-left text-gray-600 px-4 py-3 w-full border rounded border-gray-300  outline-none" type="text" placeholder="Search">
             <svg class="absolute right-3 z-10 cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="#4B5563" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M21 21L15 15" stroke="#4B5563" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            </svg>
         </div>
         </div>
         <template x-for="entry in filtered">
@@ -62,8 +62,11 @@
                         src="./assets/image/engine.jpg" alt="">
                 </div>
                 <div class="flex-initial basis-1/2 text-center justify-around gap-10 flex flex-col">
-                    <h1 x-text="entry.name" class="text-3xl"></h1>
-                    <span class="text-slate-700 uppercase font-light">Summary</span>
+                    <h1 class="text-3xl">
+                        <span x-text="entry.brand"></span><span>:</span>
+                        <span x-text="entry.name"></span>
+                    </h1>
+                    <!--<span class="text-slate-700 uppercase font-light">Summary</span>
                     <p x-text="entry.desc" class="leading-loose"></p>
                     <span class="text-slate-700 font-light uppercase">Specifications</span>
                     <table class="table-fixed text-lg font-mono uppercase">
@@ -75,7 +78,7 @@
                                 </tr>
                             </template>
                         </tbody>
-                    </table>
+                    </table>-->
                     <span class="text-slate-700 uppercase font-light">Datasheets</span>
                     <div class="flex gap-5 justify-center text-emerald-500">
                         <span
