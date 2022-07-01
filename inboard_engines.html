@@ -26,7 +26,7 @@
 
 <body :class="$store.menu && 'overflow-hidden'">
     <div x-data="{ search: '', entries: [], get filtered() { return this.entries.filter(i => JSON.stringify(i).toLowerCase().includes(this.search)) } }"
-        x-init="fetch('https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/Waterjets').then(res => res.json()).then(res => entries = res)" class="flex gap-24 flex-col">
+        x-init="fetch('https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/Inboard').then(res => res.json()).then(res => entries = res)" class="flex gap-24 flex-col">
         
 <div id="nav"
     class="flex font-sans bg-gradient-to-tr from-sky-700 to-blue-900 font-bold text-slate-100 flex-wrap flex-initial justify-around lg:justify-start items-center gap-10 basis-1/2">
@@ -64,7 +64,7 @@
 </div>
 
         <div class="flex-initial text-center flex flex-col lg:flex-row justify-center mx-24 gap-14">
-            <h1 class="text-4xl font-serif capitalize basis-1/2">Waterjets</h1>
+            <h1 class="text-4xl font-serif capitalize basis-1/2">Inboard Engines</h1>
             <div class="flex justify-start items-center relative basis-1/2">
                 <input x-model="search"
                     class="text-sm leading-none text-left text-gray-600 px-4 py-3 w-full border rounded border-gray-300  outline-none"

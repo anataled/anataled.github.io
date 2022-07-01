@@ -1,0 +1,36 @@
+{{define "nav"}}
+<div id="nav"
+    class="flex font-sans bg-gradient-to-tr from-sky-700 to-blue-900 font-bold text-slate-100 flex-wrap flex-initial justify-around lg:justify-start items-center gap-10 basis-1/2">
+    <a class="basis-1/2 lg:basis-auto" href="/">
+        <img class="inline invert lg:w-1/6 w-1/3 h-auto my-5" src="/assets/image/logo.webp" alt="">
+    </a>
+    <div class="flex-initial hidden lg:block">
+        <a href="/index.html">
+            <span class="cursor-pointer">Home</span>
+        </a>
+    </div>
+    <div class="flex-initial hidden lg:block">
+        <span class="cursor-pointer">About</span>
+    </div>
+    <div class="flex-initial hidden lg:block">
+        <a href="/parts.html">
+            <span class="cursor-pointer">Parts</span>
+        </a>
+    </div>
+    <div class="flex-initial hidden lg:block">
+        <span class="cursor-pointer">Sales</span>
+    </div>
+    <div @click="$store.menu = ! $store.menu" class="flex-initial mr-3 hover:cursor-pointer lg:hidden"
+        x-effect="console.log($store.menu)">
+        <i class="fa-solid fa-bars text-3xl"></i>
+    </div>
+</div>
+<div x-show="$store.menu" x-transition x-cloak
+    class="flex flex-col gap-[2.75rem] text-3xl justify-center items-center h-full w-full fixed top-0 left-0 z-50 bg-gray-900">
+    <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">Home</h1>
+    <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">About</h1>
+    <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">Parts</h1>
+    <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">Sales</h1>
+    <i @click="$store.menu = ! $store.menu" class="text-slate-100 fa-solid fa-circle-xmark text-5xl cursor-pointer"></i>
+</div>
+{{end}}
