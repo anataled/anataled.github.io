@@ -53,7 +53,16 @@ func build(out string) {
 		if err != nil {
 			log.Fatalln(page.Title, ":", err)
 		}
-		tmpl["content"].ExecuteTemplate(f, "content", page)
+		d := struct {
+			Page struct {
+				Title string "toml:\"title\""
+				Data  string "toml:\"data\""
+			}
+			Pages content
+		}{
+			page, c,
+		}
+		tmpl["content"].ExecuteTemplate(f, "content", d)
 		f.Close()
 	}
 	log.Printf("finished rebuilding in %f seconds\n", time.Since(start).Seconds())
