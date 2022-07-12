@@ -19,6 +19,7 @@ type content struct {
 	Pages []struct {
 		Title string `toml:"title"`
 		Data  string `toml:"data"`
+		Desc  string `toml:"desc"`
 	} `toml:"pages"`
 }
 
@@ -57,6 +58,7 @@ func build(out string) {
 			Page struct {
 				Title string "toml:\"title\""
 				Data  string "toml:\"data\""
+				Desc  string "toml:\"desc\""
 			}
 			Pages content
 		}{

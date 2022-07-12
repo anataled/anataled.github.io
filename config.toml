@@ -9,7 +9,16 @@ data = "https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/Tr
 [[pages]]
 title = "Inboard Engines"
 data = "https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/Inboard"
+desc = "If you are in need of an engine for your vessel, ADR's experienced sales professionals can guide you through the engine selection process to ensure optimal performance while complying with applicable regulations."
 
 [[pages]]
 title = "Outboard Engines"
+data = "https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/Outboard"
+
+[[pages]]
+title = "Generators"
+data = "https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/Outboard"
+
+[[pages]]
+title = "Electronics"
 data = "https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/Outboard"
