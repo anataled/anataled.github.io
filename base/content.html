@@ -1,7 +1,7 @@
 {{define "content"}}
 {{template "head" .}}
 
-<body :class="$store.menu && 'overflow-hidden'">
+<body x-data :class="$store.menu && 'overflow-hidden'">
     <div x-data="
     { 
         search: new URLSearchParams(location.search).get('q'),

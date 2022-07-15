@@ -29,7 +29,7 @@
     <div class="flex flex-col gap-10 bg-gradient-to-tr from-sky-700 to-blue-900">
         
 <div x-data="{dropdown: false}" id="nav"
-    class="flex sticky top-0 left-0 z-30 font-sans bg-gradient-to-tr from-sky-700 to-blue-900 font-bold text-slate-100 flex-wrap flex-initial justify-around lg:justify-start items-center gap-10">
+    class="flex sticky top-0 left-0 z-50 font-sans bg-gradient-to-tr from-sky-700 to-blue-900 font-bold text-slate-100 flex-wrap flex-initial justify-around lg:justify-start items-center gap-10">
     <img class="invert w-1/3 lg:w-1/12 h-auto my-5" src="/assets/image/logo.webp" alt="">
     <div class="flex-initial hidden lg:block">
         <a href="/index.html">
@@ -122,11 +122,18 @@
     </div>
 </div>
 <div x-show="$store.menu" x-transition x-cloak
-    class="flex flex-col gap-[2.75rem] text-3xl justify-center items-center h-full w-full fixed top-0 left-0 z-50 bg-gray-900">
-    <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">Home</h1>
-    <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">About</h1>
-    <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">Parts</h1>
-    <h1 class="text-slate-100 underline uppercase tracking-wide underline-offset-4">Sales</h1>
+    class="flex flex-col p-32 gap-[2.75rem] text-3xl justify-center items-center h-full w-full fixed top-0 left-0 z-50 bg-gray-900">
+    <h1 class="text-slate-100  uppercase tracking-wide underline-offset-4">Home</h1>
+    <h1 class="text-slate-100  uppercase tracking-wide underline-offset-4">Products</h1>
+    <h1 class="text-slate-100  uppercase tracking-wide underline-offset-4">Contact</h1>
+    <h1 class="text-slate-100  uppercase tracking-wide underline-offset-4">Careers</h1>
+    <div class="gap-5 flex-initial flex text-3xl font-thin text-slate-100">
+        <button
+            class="rounded-full bg-emerald-600 py-2 px-4 uppercase hover:bg-emerald-800 transition-colors">Sales</button>
+        <button
+            class="rounded-full bg-emerald-600 py-2 px-4 uppercase hover:bg-emerald-800 transition-colors">Service</button>
+    </div>
+    <div class="grow"></div>
     <i @click="$store.menu = ! $store.menu" class="text-slate-100 fa-solid fa-circle-xmark text-5xl cursor-pointer"></i>
 </div>
 
@@ -138,9 +145,9 @@
             </video>
             <div class="flex flex-col lg:flex-row justify-between items-center relative h-5/6">
                 <h1
-                    class="text-slate-100 font-serif text-7xl z-20 leading-relaxed basis-1/2 text-center lg:text-left flex justify-center items-center">
+                    class="text-slate-100 font-serif text-5xl lg:text-7xl z-20 leading-relaxed basis-1/2 text-center lg:text-left flex justify-center items-center">
                     Marine products<br>tailored to your needs.</h1>
-                <h1 class="text-slate-100 z-30 text-lg basis-1/2 text-center flex justify-center items-center leading-relaxed tracking-wide p-6">
+                <h1 class="text-slate-100 z-30 text-md lg:text-lg basis-1/2 text-center flex justify-center items-center leading-relaxed tracking-wide p-6">
                     From service to re-powers, diagnostics to overhauls, parts to upgrades, we tailor marine products to
                     fit your specific operating needs. ADR is proud to represent products that are reliable, readily
                     accessible, and serviceable wherever your vessel takes you. Call us and one of our professionals
@@ -183,7 +190,7 @@
                 <h1 class="font-serif text-3xl lg:text-6xl flex-initial lg:text-left">Brands We Work With</h1>
             </div>
             <div class="flex-initial flex flex-col justify-center gap-4 basis-1/2 my-8 text-center items-center">
-                <div class="grid grid-flow-row-dense grid-rows-3 grid-cols-4 gap-10">
+                <div class="grid grid-flow-row-dense grid-cols-3 grid-rows-3 lg:grid-rows-3 lg:grid-cols-4 gap-10">
                     <img class="" src="/assets/image/alamarinjet.png" alt="">
                     <img class="" src="/assets/image/baudouin.png" alt="">
                     <img class="" src="/assets/image/caterpillar.png" alt="">

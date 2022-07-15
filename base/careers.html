@@ -1,7 +1,7 @@
 {{define "careers"}}
 {{template "head" .}}
 
-<body>
+<body x-data :class="$store.menu && 'overflow-hidden'">
     <div class="flex flex-col gap-16">
         {{template "nav" .}}
         <div class="flex flex-col items-center lg:flex-row gap-10 lg:mx-24 text-left backdrop-saturate-75 rounded-md">
