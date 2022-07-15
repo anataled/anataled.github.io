@@ -16,7 +16,8 @@ import (
 )
 
 type content struct {
-	Pages []struct {
+	BrandInfo string
+	Pages     []struct {
 		Title string `toml:"title"`
 		Data  string `toml:"data"`
 		Desc  string `toml:"desc"`
@@ -28,6 +29,7 @@ func build(out string) {
 	tmpl := make(map[string]*template.Template)
 	tmpl["home"] = template.Must(template.ParseFiles("partials/head.html", "partials/nav.html", "partials/footer.html", "partials/script.html", "base/home.html"))
 	tmpl["content"] = template.Must(template.ParseFiles("partials/head.html", "partials/nav.html", "partials/footer.html", "partials/script.html", "base/content.html"))
+	tmpl["careers"] = template.Must(template.ParseFiles("partials/head.html", "partials/nav.html", "partials/footer.html", "partials/script.html", "base/careers.html"))
 
 	idxFile, err := os.Create(filepath.Join(out, "index.html"))
 	if err != nil {
@@ -36,6 +38,14 @@ func build(out string) {
 
 	tmpl["home"].ExecuteTemplate(idxFile, "home", nil)
 	idxFile.Close()
+
+	careers, err := os.Create(filepath.Join(out, "careers.html"))
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	tmpl["careers"].ExecuteTemplate(careers, "careers", nil)
+	careers.Close()
 
 	bs, err := os.ReadFile("config.toml")
 	if err != nil {

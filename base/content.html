@@ -7,23 +7,32 @@
         search: new URLSearchParams(location.search).get('q'),
         info: {},
         entries: [],
+        brands: {},
         get filtered() {
             return this.entries.filter(i => JSON.stringify(i).toLowerCase().includes(this.query))
         },
         get query() {
             return this.search ? this.search : ''
-        } 
+        },
     }"
-        x-init="fetch('{{ .Page.Data }}').then(res => res.json()).then(res => entries = res)" 
-        x-init="fetch"
-        class="flex gap-24 flex-col">
+    x-init="
+    fetch('{{ .Page.Data }}').then(res => res.json()).then(res => entries = res),
+    fetch('https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/BrandInfo')
+    .then(res => res.json())
+    .then(function(a) {
+        brands = a.reduce(function(map, obj){
+            map[obj.brand] = {description: obj.description, chart: obj.chart, chartName: obj.chartName };
+            return map;
+        }, {})
+        console.log(brands)
+    })" class=" flex gap-24 flex-col">
         {{template "nav" .}}
-        <div class="flex-initial text-center flex flex-col lg:flex-row justify-center mx-24 gap-14">
-            <div class="basis-1/2">
-                <h1 class="text-4xl font-serif capitalize basis-1/2">{{ .Page.Title }}</h1>
+        <div class="flex-initial flex flex-col justify-center items-center lg:mx-24 gap-14 text-center">
+            <div class="basis-1/2 lg:w-1/2">
+                <h1 class="text-5xl font-serif capitalize basis-1/2">{{ .Page.Title }}</h1>
                 <p class="mt-7 font-thin">{{ .Page.Desc }}</p>
             </div>
-            <div class="flex justify-start items-center relative basis-1/2">
+            <div class="flex justify-start items-center relative basis-1/2 w-1/2 lg:w-1/4">
                 <input x-model="search"
                     class="text-sm leading-none text-left text-gray-600 px-4 py-3 w-full border rounded border-gray-300  outline-none"
                     type="text" placeholder="Filter within this page...">
@@ -43,11 +52,34 @@
                     <img class="animate__animated animate__fadeIn rounded inline object-center w-10/12 max-w-full h-auto max-h-full"
                         :src="'/assets/image/'+entry.image" alt="">
                 </div>
-                <div class="flex-initial basis-1/2 text-center justify-around gap-10 flex flex-col">
+                <div x-data="
+                {
+                    desc: false,
+                    get brandDesc() { return brands[entry.brand].description},
+                    get brandTable() { return brands[entry.brand].chart.split('\n')},
+                    get brandTableName() { return brands[entry.brand].chartName},
+                }"
+                    class="flex-initial basis-1/2 text-center justify-around gap-10 flex flex-col">
                     <div class="flex items-center justify-center gap-5 text-slate-700">
                         <span x-text="entry.brand" class="text-3xl"></span>
-                        <i class="text-xl fa-solid fa-circle-info hover:cursor-pointer"></i>
+                        <i @animationend="$event.target.classList.remove(`animate__animated`, 'animate__rotateIn');"
+                        @click="desc = !desc" :class="desc ? 'fa-circle-up animate__animated animate__rotateIn' : 'fa-circle-down animate__animated animate__rotateIn'"
+                            class="text-2xl text-emerald-500 fa-solid hover:cursor-pointer"></i>
                     </div>
+                    <span x-show="desc" x-transition class="text-md font-thin text-slate-700" x-text="brandDesc"></span>
+                    <span x-show="desc" x-transition class="text-lg font-bold text-slate-700" x-text="brandTableName"></span>
+                    <table x-show="desc" x-transition class="text-md font-thin text-slate-700 border-spacing-5 border-collapse">
+                        <tbody>
+                            <template x-for="(row, index) in brandTable">
+                                <tr :class="index != brandTable.length-1 && 'border-b'">
+                                    <template x-for="(val, index) in row.split(':')">
+                                        <td class="p-2" :class="index != row.split(':').length-1 && 'border-r'" x-text="val"></td>
+                                    </template>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                    <hr x-show="desc" class="mx-10">
                     <h1 x-text="entry.name" class="text-3xl"></h1>
                     <span class="text-slate-700 uppercase font-light">Summary</span>
                     <p x-text="entry.desc" class="leading-loose italic"></p>
