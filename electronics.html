@@ -51,7 +51,7 @@
     })" class="min-h-screen flex gap-24 flex-col mb-10">
         
 <div x-data="{dropdown: false}" id="nav"
-    class="flex sticky top-0 left-0 z-50 font-sans bg-gradient-to-tr from-sky-700 to-blue-900 font-bold text-slate-100 flex-wrap text-lg flex-initial justify-around lg:justify-start items-center gap-10">
+    class="flex sticky top-0 left-0 z-50 font-sans bg-gradient-to-tr from-sky-700 to-blue-900 font-bold text-slate-100 flex-wrap text-lg flex-initial justify-around lg:justify-start items-center gap-x-10 gap-y-5">
     <a href="/index.html" class="w-1/3 lg:w-1/12 h-auto my-5 order-first"><img class="invert" src="/assets/image/logo.webp" alt=""></a>
     <div :class="$store.menu ? 'flex' : 'hidden lg:flex'" id="navlinks" class="order-last lg:basis-auto basis-full items-center justify-center mb-5 lg:-mb-5 lg:-order-last gap-5 lg:gap-10">
         <div class="flex-initial">
@@ -175,6 +175,9 @@
                 </svg>
             </div>
         </div>
+        <template x-show="filtered.length == 0">
+            <h1 x-text="query"></h1>
+        </template>
         <template x-for="entry in filtered">
             <div class="flex-initia flex md:flex-row flex-col justify-evenly gap-4 mx-10">
                 <div class="flex-initial text-center basis-1/2">
@@ -184,9 +187,9 @@
                 <div x-data="
                 {
                     desc: false,
-                    get brandDesc() { return brands[entry.brand].description},
-                    get brandTable() { return brands[entry.brand].chart.split('\n')},
-                    get brandTableName() { return brands[entry.brand].chartName},
+                    get brandDesc() { return (brands[entry.brand] ? brands[entry.brand].description : '')},
+                    get brandTable() { return (brands[entry.brand] ? brands[entry.brand].chart.split('\n') : [] ) },
+                    get brandTableName() { return (brands[entry.brand] ? brands[entry.brand].chartName : '' )},
                 }"
                     class="flex-initial basis-1/2 text-center justify-around gap-10 flex flex-col">
                     <div class="flex items-center justify-center gap-5 text-slate-700">

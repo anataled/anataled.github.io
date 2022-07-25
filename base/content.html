@@ -46,6 +46,9 @@
                 </svg>
             </div>
         </div>
+        <template x-show="filtered.length == 0">
+            <h1 x-text="query"></h1>
+        </template>
         <template x-for="entry in filtered">
             <div class="flex-initia flex md:flex-row flex-col justify-evenly gap-4 mx-10">
                 <div class="flex-initial text-center basis-1/2">
@@ -55,9 +58,9 @@
                 <div x-data="
                 {
                     desc: false,
-                    get brandDesc() { return brands[entry.brand].description},
-                    get brandTable() { return brands[entry.brand].chart.split('\n')},
-                    get brandTableName() { return brands[entry.brand].chartName},
+                    get brandDesc() { return (brands[entry.brand] ? brands[entry.brand].description : '')},
+                    get brandTable() { return (brands[entry.brand] ? brands[entry.brand].chart.split('\n') : [] ) },
+                    get brandTableName() { return (brands[entry.brand] ? brands[entry.brand].chartName : '' )},
                 }"
                     class="flex-initial basis-1/2 text-center justify-around gap-10 flex flex-col">
                     <div class="flex items-center justify-center gap-5 text-slate-700">
