@@ -1,7 +1,7 @@
 {{define "content"}}
 {{template "head" .}}
 
-<body x-data :class="$store.menu && 'overflow-hidden'">
+<body x-data>
     <div x-data="
     { 
         search: new URLSearchParams(location.search).get('q'),
@@ -25,7 +25,7 @@
             return map;
         }, {})
         console.log(brands)
-    })" class=" flex gap-24 flex-col">
+    })" class="min-h-screen flex gap-24 flex-col mb-10">
         {{template "nav" .}}
         <div class="flex-initial flex flex-col justify-center items-center lg:mx-24 gap-14 text-center">
             <div class="basis-1/2 lg:w-1/2">
@@ -47,7 +47,7 @@
             </div>
         </div>
         <template x-for="entry in filtered">
-            <div class="flex-initial flex md:flex-row flex-col justify-evenly gap-4 mx-10">
+            <div class="flex-initia flex md:flex-row flex-col justify-evenly gap-4 mx-10">
                 <div class="flex-initial text-center basis-1/2">
                     <img class="animate__animated animate__fadeIn rounded inline object-center w-10/12 max-w-full h-auto max-h-full"
                         :src="'/assets/image/'+entry.image" alt="">
@@ -81,9 +81,9 @@
                     </table>
                     <hr x-show="desc" class="mx-10">
                     <h1 x-text="entry.name" class="text-3xl"></h1>
-                    <span class="text-slate-700 uppercase font-light">Summary</span>
-                    <p x-text="entry.desc" class="leading-loose italic"></p>
-                    <span class="text-slate-700 font-light uppercase">Specifications</span>
+                    <span class="text-slate-700 uppercase font-bold">Summary</span>
+                    <p x-text="entry.desc" class="leading-loose font-thin"></p>
+                    <span class="text-slate-700 font-bold uppercase">Specifications</span>
                     <table class="table-fixed text-lg font-mono uppercase">
                         <tbody>
                             <template x-for="prop in entry.props.split('\n')">
@@ -94,20 +94,20 @@
                             </template>
                         </tbody>
                     </table>
-                    <span class="text-slate-700 uppercase font-light">Datasheets</span>
+                    <span class="text-slate-700 uppercase font-bold">Datasheets</span>
                     <div class="flex gap-5 justify-center text-emerald-500">
                         <template x-for="file in entry.files.split('\n')">
                             <div>
-                                <i class="fa-solid fa-file-pdf"></i>&nbsp;<span x-text="file"
-                                    class="hover:cursor-pointer uppercase underline decoration-wavy underline-offset-4"></span>
+                                <i class="fa-solid fa-file-pdf"></i>&nbsp;<a :href="file" x-text="file"
+                                    class="hover:cursor-pointer uppercase underline decoration-wavy underline-offset-4"></a>
                             </div>
                         </template>
                     </div>
                 </div>
             </div>
         </template>
-        {{template "footer" .}}
     </div>
+    {{template "footer" .}}
 </body>
 
 </html>

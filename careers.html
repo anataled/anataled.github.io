@@ -25,88 +25,102 @@
 
 
 <body x-data :class="$store.menu && 'overflow-hidden'">
-    <div class="flex flex-col gap-16">
+    <div class="flex flex-col gap-16 min-h-screen">
         
 <div x-data="{dropdown: false}" id="nav"
-    class="flex sticky top-0 left-0 z-50 font-sans bg-gradient-to-tr from-sky-700 to-blue-900 font-bold text-slate-100 flex-wrap flex-initial justify-around lg:justify-start items-center gap-10">
-    <img class="invert w-1/3 lg:w-1/12 h-auto my-5" src="/assets/image/logo.webp" alt="">
-    <div class="flex-initial hidden lg:block">
-        <a href="/index.html">
-            <span class="cursor-pointer">Home</span>
-        </a>
-    </div>
-    
-    <div class="flex-initial hidden lg:block overflow-visible relative select-none">
-        <span @click.outside="dropdown = false" @click="dropdown = !dropdown" @mouseover="dropdown = !dropdown"
-            class="cursor-pointer">Products&nbsp;&nbsp;<span><i :class="dropdown ? 'fa-angle-right' : 'fa-angle-down'"
-                    class="fa-solid"></i></span></span>
-        <div x-show="dropdown" x-transition x-cloak
-            class="z-50 absolute top-full mt-2 w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
-            role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-            <div class="py-1 text-md" role="none">
-                <div class="text-gray-700 block px-4 py-2 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="menu-item-0">
-                    <span>Engines</span>
-                    <div class="mt-1 ml-5">
-                        <span>Inboard Engines</span>
-                        <div class="mt-1 ml-10">
-                            <ul class="list-none font-thin">
-                                <li><a class="hover:underline" href="/inboard_engines.html?q=baudouin">Baudouin</a></li>
-                                <li><a class="hover:underline" href="/inboard_engines.html?q=scania">Scania</a></li>
-                                <li><a class="hover:underline" href="/inboard_engines.html?q=caterpillar">Caterpillar</a></li>
-                            </ul>
+    class="flex sticky top-0 left-0 z-50 font-sans bg-gradient-to-tr from-sky-700 to-blue-900 font-bold text-slate-100 flex-wrap text-lg flex-initial justify-around lg:justify-start items-center gap-10">
+    <img class="invert w-1/3 lg:w-1/12 h-auto my-5 order-first" src="/assets/image/logo.webp" alt="">
+    <div :class="$store.menu ? 'flex' : 'hidden lg:flex'" id="navlinks" class="order-last lg:basis-auto basis-full items-center justify-center mb-5 lg:-mb-5 lg:-order-last gap-5 lg:gap-10">
+        <div class="flex-initial">
+            <a href="/index.html">
+                <span class="cursor-pointer">Home</span>
+            </a>
+        </div>
+        
+        <div class="flex-initial overflow-visible relative select-none">
+            <span @click.outside="dropdown = false" @click="dropdown = !dropdown" @mouseover="dropdown = !dropdown"
+                class="cursor-pointer">Products&nbsp;&nbsp;<span><i
+                        :class="dropdown ? 'fa-angle-right' : 'fa-angle-down'" class="fa-solid"></i></span></span>
+            <div x-show="dropdown" x-transition x-cloak
+                class="z-50 fixed lg:absolute top-0 left-0 lg:top-full w-screen h-screen lg:h-auto lg:w-72 lg:rounded-md overflow-y-scroll shadow-lg text-slate-200 lg:text-gray-700 bg-gradient-to-tr from-sky-700 to-blue-900 lg:bg-white ring-1 ring-black ring-opacity-5"
+                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                <div class="py-1 text-md" role="none">
+                    <div class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-900" role="menuitem"
+                        tabindex="-1" id="menu-item-0">
+                        <span>Engines</span>
+                        <div class="mt-1 ml-5">
+                            <span>Inboard Engines</span>
+                            <div class="mt-1 ml-10">
+                                <ul class="list-none font-thin">
+                                    <li><a class="hover:underline" href="/inboard_engines.html?q=baudouin">Baudouin</a>
+                                    </li>
+                                    <li><a class="hover:underline" href="/inboard_engines.html?q=scania">Scania</a></li>
+                                    <li><a class="hover:underline"
+                                            href="/inboard_engines.html?q=caterpillar">Caterpillar</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-1 ml-5">
+                            <span>Outboard Engines</span>
+                            <div class="mt-1 ml-10">
+                                <ul class="list-none font-thin">
+                                    <li><a class="hover:underline" href="/outboard_engines.html?q=neander">Neander</a>
+                                    </li>
+                                    <li><a class="hover:underline" href="/outboard_engines.html?q=motors">Motors</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="mt-1 ml-5">
-                        <span>Outboard Engines</span>
-                        <div class="mt-1 ml-10">
-                            <ul class="list-none font-thin">
-                                <li><a class="hover:underline" href="/outboard_engines.html?q=neander">Neander</a></li>
-                                <li><a class="hover:underline" href="/outboard_engines.html?q=motors">Motors</a></li>
-                            </ul>
+                    <div class=" block px-4 py-2 hover:bg-gray-100 hover:text-gray-900" role="menuitem"
+                        tabindex="-1" id="menu-item-0">
+                        <span>Gears</span>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/transmissions.html?q=zf">ZF</a></span>
+                        </div>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/transmissions.html?q=twin disc">Twin Disc</a></span>
                         </div>
                     </div>
-                </div>
-                <div class="text-gray-700 block px-4 py-2 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="menu-item-0">
-                    <span>Gears</span>
-                    <div class="mt-1 ml-5 font-thin">
-                        <span><a class="hover:underline" href="/transmissions.html?q=zf">ZF</a></span>
+                    <div class=" block px-4 py-2 hover:bg-gray-100 hover:text-gray-900" role="menuitem"
+                        tabindex="-1" id="menu-item-0">
+                        <span>Waterjet</span>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline"
+                                    href="/waterjets.html?q=alamarin-jet">Alamarin-Jet</a></span>
+                        </div>
                     </div>
-                    <div class="mt-1 ml-5 font-thin">
-                        <span><a class="hover:underline" href="/transmissions.html?q=twin disc">Twin Disc</a></span>
+                    <div class=" block px-4 py-2 hover:bg-gray-100 hover:text-gray-900" role="menuitem"
+                        tabindex="-1" id="menu-item-0">
+                        <span>Generators</span>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/generators.html?q=northern lights">Northern
+                                    Lights</a></span>
+                        </div>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/generators.html?q=kohler">Kohler</a></span>
+                        </div>
                     </div>
-                </div>
-                <div class="text-gray-700 block px-4 py-2 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="menu-item-0">
-                    <span>Waterjet</span>
-                    <div class="mt-1 ml-5 font-thin">
-                        <span><a class="hover:underline" href="/waterjets.html?q=alamarin-jet">Alamarin-Jet</a></span>
-                    </div>
-                </div>
-                <div class="text-gray-700 block px-4 py-2 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="menu-item-0">
-                    <span>Generators</span>
-                    <div class="mt-1 ml-5 font-thin">
-                        <span><a class="hover:underline" href="/generators.html?q=northern lights">Northern Lights</a></span>
-                    </div>
-                    <div class="mt-1 ml-5 font-thin">
-                        <span><a class="hover:underline" href="/generators.html?q=kohler">Kohler</a></span>
-                    </div>
-                </div>
-                <div class="text-gray-700 block px-4 py-2 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="menu-item-0">
-                    <span>Electronics</span>
-                    <div class="mt-1 ml-5 font-thin">
-                        <span><a class="hover:underline" href="/electronics.html?q=glendinning">Glendinning</a></span>
-                    </div>
-                    <div class="mt-1 ml-5 font-thin">
-                        <span><a class="hover:underline" href="/electronics.html?q=dockmate">Dockmate</a></span>
+                    <div class=" block px-4 py-2 hover:bg-gray-100 hover:text-gray-900" role="menuitem"
+                        tabindex="-1" id="menu-item-0">
+                        <span>Electronics</span>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline"
+                                    href="/electronics.html?q=glendinning">Glendinning</a></span>
+                        </div>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/electronics.html?q=dockmate">Dockmate</a></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="flex-initial hidden lg:block">
-        <span class="cursor-pointer">Contact</span>
-    </div>
-    <div class="flex-initial hidden lg:block">
-        <a href="/careers.html">Careers</a>
+        <div class="flex-initial">
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="flex-initial">
+            <a href="/careers.html">Careers</a>
+        </div>
     </div>
     <div class="grow hidden lg:block"></div>
     <div class="gap-5 flex-initial hidden lg:flex mr-10 text-sm font-bold">
@@ -120,23 +134,8 @@
         <i class="fa-solid fa-bars text-3xl"></i>
     </div>
 </div>
-<div x-show="$store.menu" x-transition x-cloak
-    class="flex flex-col p-32 gap-[2.75rem] text-3xl justify-center items-center h-full w-full fixed top-0 left-0 z-50 bg-gray-900">
-    <h1 class="text-slate-100  uppercase tracking-wide underline-offset-4">Home</h1>
-    <h1 class="text-slate-100  uppercase tracking-wide underline-offset-4">Products</h1>
-    <h1 class="text-slate-100  uppercase tracking-wide underline-offset-4">Contact</h1>
-    <h1 class="text-slate-100  uppercase tracking-wide underline-offset-4">Careers</h1>
-    <div class="gap-5 flex-initial flex text-3xl font-thin text-slate-100">
-        <button
-            class="rounded-full bg-emerald-600 py-2 px-4 uppercase hover:bg-emerald-800 transition-colors">Sales</button>
-        <button
-            class="rounded-full bg-emerald-600 py-2 px-4 uppercase hover:bg-emerald-800 transition-colors">Service</button>
-    </div>
-    <div class="grow"></div>
-    <i @click="$store.menu = ! $store.menu" class="text-slate-100 fa-solid fa-circle-xmark text-5xl cursor-pointer"></i>
-</div>
 
-        <div class="flex flex-col items-center lg:flex-row gap-10 lg:mx-24 text-left backdrop-saturate-75 rounded-md">
+        <div class="flex grow flex-col p-5 lg:p-0 items-center lg:flex-row gap-10 lg:mx-24 text-left backdrop-saturate-75 rounded-md">
             <img class="inline basis-1/2 object-fit lg:w-1/2 lg:h-1/2 rounded-md" src="/assets/image/careers.jpg" alt="">
             <div class="flex flex-col gap-10 text-left items-center justify-start basis-1/2 font-thin text-lg text-black">
                 <h1 class="text-6xl font-serif capitalize text-center">Careers</h1>
@@ -159,19 +158,37 @@
             </div>
         </div>
         
-<div id="nav" class="flex flex-wrap flex-initial justify-center items-baseline bg-gradient-to-tr from-sky-800 to-blue-900 p-14 gap-10 basis-1/2">
-    <div class="flex-initial">
-        <span class="cursor-pointer font-sans font-thin text-gray-300">
-            Phone: 1-877-ADR-2525
-        </span>
-        <br>
-        <span class="cursor-pointer font-sans font-thin text-gray-300">
-            Sales: sales@adrpowersystems.com
-        </span>
-        <br>
-        <span class="cursor-pointer font-sans font-thin text-gray-300">
-            Service: service@adrpowersystems.com
-        </span>
+<div
+    class="flex flex-wrap flex-initial justify-around items-center bg-gradient-to-tr from-sky-800 to-blue-900 p-14 gap-10 basis-1/2">
+    <div class="flex-initial flex-col">
+        <div id="contact" class="mb-5">
+            <span class="text-lg text-gray-100">Contact</span>
+        </div>
+        <div>
+            <span class="font-sans font-thin text-gray-300">
+                <a href="tel:1-877-ADR-2525 ">1-877-ADR-2525</a>
+            </span>
+        </div>
+        <div>
+
+            <span class="font-sans font-thin text-gray-300">
+                <a href="mailto:sales@adrpowersystems.com">sales@adrpowersystems.com</a>
+            </span>
+        </div>
+        <div>
+
+            <span class="font-sans font-thin text-gray-300">
+                <a href="mailto:service@adrpowersystems.com">service@adrpowersystems.com</a>
+            </span>
+        </div>
+    </div>
+    <div class="flex-initial text-3xl text-center text-gray-300">
+        <a href="//facebook.com/adrpowersystems">
+            <i class="fa-brands fa-facebook p-5 hover:text-slate-500 transition-colors rounded-full"></i>
+        </a>
+        <a href="//instagram.com/adrpowersystems">
+            <i class="fa-brands fa-instagram p-5 hover:text-slate-500 transition-colors rounded-full"></i>
+        </a>
     </div>
 </div>
 
