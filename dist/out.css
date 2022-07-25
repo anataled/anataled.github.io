@@ -615,10 +615,6 @@ video {
   right: 0.75rem;
 }
 
-.z-30{
-  z-index: 30;
-}
-
 .z-50{
   z-index: 50;
 }
@@ -629,6 +625,10 @@ video {
 
 .z-20{
   z-index: 20;
+}
+
+.z-30{
+  z-index: 30;
 }
 
 .m-0{
@@ -822,10 +822,6 @@ video {
   grid-auto-flow: row dense;
 }
 
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1002,6 +998,10 @@ video {
      object-position: center;
 }
 
+.p-32{
+  padding: 8rem;
+}
+
 .p-14{
   padding: 3.5rem;
 }
@@ -1016,10 +1016,6 @@ video {
 
 .p-20{
   padding: 5rem;
-}
-
-.p-32{
-  padding: 8rem;
 }
 
 .py-1{
@@ -1040,11 +1036,6 @@ video {
 .py-3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.py-20{
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 
 .text-left{
@@ -1095,11 +1086,6 @@ video {
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-7xl{
-  font-size: 4.5rem;
-  line-height: 1;
 }
 
 .text-xl{
@@ -1321,14 +1307,14 @@ video {
     margin-right: 6rem;
   }
 
-  .lg\:mx-56{
-    margin-left: 14rem;
-    margin-right: 14rem;
-  }
-
   .lg\:my-8{
     margin-top: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .lg\:mx-56{
+    margin-left: 14rem;
+    margin-right: 14rem;
   }
 
   .lg\:block{
@@ -1391,16 +1377,6 @@ video {
     text-align: left;
   }
 
-  .lg\:text-6xl{
-    font-size: 3.75rem;
-    line-height: 1;
-  }
-
-  .lg\:text-3xl{
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .lg\:text-7xl{
     font-size: 4.5rem;
     line-height: 1;
@@ -1409,6 +1385,16 @@ video {
   .lg\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-6xl{
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .lg\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
