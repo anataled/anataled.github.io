@@ -1510,6 +1510,10 @@ video {
     flex-basis: auto;
   }
 
+  .lg\:basis-1\/2{
+    flex-basis: 50%;
+  }
+
   .lg\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
