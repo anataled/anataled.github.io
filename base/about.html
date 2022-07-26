@@ -1,0 +1,37 @@
+{{define "about"}}
+{{template "head" .}}
+
+<body x-data>
+    <div class="flex flex-col gap-16 min-h-screen">
+        {{template "nav" .}}
+        <div class="flex grow flex-col p-5 lg:p-0 items-center lg:flex-row gap-10 lg:mx-24 text-left backdrop-saturate-75 rounded-md">
+            <img class="lg:basis-1/2 object-fit lg:w-1/2 lg:h-1/2 rounded-md" src="/assets/image/coworkers.jpg" alt="">
+            <div class="flex flex-col gap-10 text-left items-center justify-start basis-1/2 font-thin mx-10 lg:mx-0 text-lg text-black">
+                <h1 class="text-6xl font-serif capitalize text-center">Who We Are</h1>
+                <p class="leading-8">
+                    ADR Power Systems, Inc. was founded by David Arata and Richard DeBord in October of 2015. Operations
+                    began in a small warehouse near the Channel District in Tampa, Florida, and focused on marine
+                    transmission services for recreational and commercial fishing vessels ranging from small boats to
+                    mega yachts. Expert workmanship, coupled with rapid turn-around time, catapulted the company to
+                    broaden its presence to include the State of Florida, Eastern Seaboard, and the Caribbean.
+                </p>
+            </div>
+        </div>
+        <div class="flex grow flex-col lg:flex-row p-5 items-center gap-10 lg:mx-72 lg:p-32 text-left backdrop-saturate-75 rounded-md">
+            <div class="flex flex-col gap-10 text-left items-center justify-start basis-1/2 font-thin mx-10 lg:mx-0 text-lg text-black">
+                <p class="leading-8">
+                    Today, ADR Power Systems, Inc. possesses over one hundred years of combined Twin Disc experience and
+                    has expanded its service offering to include maritime electronic controls, marine engines, and
+                    industrial transmission repairs, among others. The company is composed of a balanced blend of
+                    skilled resources that act as a single-synchronized unit to minimize downtime and keep customers
+                    focused on their mission. ADR’s commitment to excellence has allowed them to become authorized
+                    dealers for ZF, Glendinning, & NACD.
+                </p>
+            </div>
+            <img class="lg:basis-1/2 object-fit lg:w-1/2 lg:h-1/2 rounded-md order-first lg:order-last" src="/assets/image/laugh.jpg" alt="">
+        </div>
+        {{template "footer" .}}
+    </div>
+</body>
+
+{{end}}

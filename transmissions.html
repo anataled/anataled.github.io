@@ -39,7 +39,7 @@
         },
     }"
     x-init="
-    fetch('https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/Transmissions').then(res => res.json()).then(res => entries = res),
+    fetch('https://opensheet.elk.sh/1qTdwMLDeH7sHGnf37KcMbf78TnNqYBAL28zVWKo_tds/Transmissions').then(res => res.json()).then(res => entries = res),
     fetch('https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/BrandInfo')
     .then(res => res.json())
     .then(function(a) {
@@ -55,7 +55,7 @@
     <a href="/index.html" class="w-1/3 lg:w-1/12 h-auto my-5 order-first"><img class="invert" src="/assets/image/logo.webp" alt=""></a>
     <div :class="$store.menu ? 'flex' : 'hidden lg:flex'" id="navlinks" class="order-last lg:basis-auto basis-full items-center justify-center mb-5 lg:-mb-5 lg:-order-last gap-5 lg:gap-10">
         <div class="flex-initial">
-            <a href="/index.html">Home</a>
+            <a href="/about.html">About</a>
         </div>
         
         <div class="flex-initial overflow-visible relative select-none">
@@ -63,7 +63,7 @@
                 class="cursor-pointer">Products&nbsp;&nbsp;<span><i
                         :class="dropdown ? 'fa-angle-right' : 'fa-angle-down'" class="fa-solid"></i></span></span>
             <div x-show="dropdown" x-transition x-cloak
-                class="z-50 fixed lg:absolute top-0 left-0 lg:top-full w-screen h-screen lg:h-auto lg:w-72 lg:rounded-md overflow-y-scroll shadow-lg text-slate-200 lg:text-gray-700 bg-gradient-to-tr from-sky-700 to-blue-900 lg:bg-none lg:bg-white ring-1 ring-black ring-opacity-5"
+                class="z-50 overscroll-contain fixed lg:absolute top-0 left-0 lg:top-full w-screen h-screen lg:h-auto lg:w-72 lg:rounded-md overflow-y-scroll shadow-lg text-slate-200 lg:text-gray-700 bg-gradient-to-tr from-sky-700 to-blue-900 lg:bg-none lg:bg-white ring-1 ring-black ring-opacity-5"
                 role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                 <div class="py-1 text-md" role="none">
                     <div class="block px-4 py-2 lg:hover:bg-gray-100 lg:hover:text-gray-900" role="menuitem"
@@ -85,9 +85,7 @@
                             <span>Outboard Engines</span>
                             <div class="mt-1 ml-10">
                                 <ul class="list-none font-thin">
-                                    <li><a class="hover:underline" href="/outboard_engines.html?q=neander">Neander</a>
-                                    </li>
-                                    <li><a class="hover:underline" href="/outboard_engines.html?q=motors">Motors</a>
+                                    <li><a class="hover:underline" href="/outboard_engines.html?q=neander">Neander Motors</a>
                                     </li>
                                 </ul>
                             </div>
@@ -105,7 +103,7 @@
                     </div>
                     <div class=" block px-4 py-2 lg:hover:bg-gray-100 lg:hover:text-gray-900" role="menuitem"
                         tabindex="-1" id="menu-item-0">
-                        <span>Waterjet</span>
+                        <span>Waterjets</span>
                         <div class="mt-1 ml-5 font-thin">
                             <span><a class="hover:underline"
                                     href="/waterjets.html?q=alamarin-jet">Alamarin-Jet</a></span>
@@ -144,6 +142,11 @@
         </div>
     </div>
     <div class="grow hidden lg:block"></div>
+    <div class="hidden lg:block">
+        <span class="font-sans text-xl font-thin text-gray-300">
+            <a href="tel:1-877-ADR-2525 ">1-877-ADR-2525</a>
+        </span>
+    </div>
     <div class="gap-5 flex-initial hidden lg:flex mr-10 text-sm font-bold">
         <button
             class="rounded-full bg-emerald-600 py-2 px-4 uppercase hover:bg-emerald-800 transition-colors">Sales</button>
@@ -241,7 +244,7 @@
     </div>
     
 <div
-    class="flex flex-wrap flex-initial justify-around items-center bg-gradient-to-tr from-sky-800 to-blue-900 p-14 gap-10 basis-1/2">
+    class="flex flex-wrap flex-initial justify-around items-center bg-slate-800 p-14 gap-10 basis-1/2">
     <div class="flex-initial flex-col">
         <div id="contact" class="mb-5">
             <span class="text-lg text-gray-100">Contact</span>

@@ -30,6 +30,7 @@ func build(out string) {
 	tmpl["home"] = template.Must(template.ParseFiles("partials/head.html", "partials/nav.html", "partials/footer.html", "partials/script.html", "base/home.html"))
 	tmpl["content"] = template.Must(template.ParseFiles("partials/head.html", "partials/nav.html", "partials/footer.html", "partials/script.html", "base/content.html"))
 	tmpl["careers"] = template.Must(template.ParseFiles("partials/head.html", "partials/nav.html", "partials/footer.html", "partials/script.html", "base/careers.html"))
+	tmpl["about"] = template.Must(template.ParseFiles("partials/head.html", "partials/nav.html", "partials/footer.html", "partials/script.html", "base/about.html"))
 
 	idxFile, err := os.Create(filepath.Join(out, "index.html"))
 	if err != nil {
@@ -46,6 +47,14 @@ func build(out string) {
 
 	tmpl["careers"].ExecuteTemplate(careers, "careers", nil)
 	careers.Close()
+
+	about, err := os.Create(filepath.Join(out, "about.html"))
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	tmpl["about"].ExecuteTemplate(about, "about", nil)
+	about.Close()
 
 	bs, err := os.ReadFile("config.toml")
 	if err != nil {
