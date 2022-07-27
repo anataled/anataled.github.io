@@ -40,7 +40,7 @@
     }"
     x-init="
     fetch('https://opensheet.elk.sh/1qTdwMLDeH7sHGnf37KcMbf78TnNqYBAL28zVWKo_tds/Inboard').then(res => res.json()).then(res => entries = res),
-    fetch('https://opensheet.elk.sh/1NQGBDrmzIxoMZ7uvvdw0AxWmW4jO4ExOL8WC1AloJX0/BrandInfo')
+    fetch('https://opensheet.elk.sh/1qTdwMLDeH7sHGnf37KcMbf78TnNqYBAL28zVWKo_tds/BrandInfo')
     .then(res => res.json())
     .then(function(a) {
         brands = a.reduce(function(map, obj){
