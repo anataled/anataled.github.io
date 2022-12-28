@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;700&family=Merriweather:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+[x-cloak] { display: none !important; }
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.grid-bg {
+ --color-v: transparent;
+ --color: grey;
+ --image: url('/assets/image/g1.jpg');
+
+    background:
+        radial-gradient(circle, transparent 40%, var(--color-v) 75%),
+        linear-gradient(to right, var(--color), var(--color)),
+        var(--image);
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode:
+        var(--blend-top, normal),
+        var(--blend-bottom, multiply),
+        normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,33 @@
+{{define "aquadrive"}}
+{{template "head" .}}
+
+<body x-data>
+    <div class="flex flex-col gap-16 min-h-screen">
+        {{template "nav" .}}
+        <div
+            class="flex grow flex-col p-5 lg:p-0 items-center lg:flex-row gap-10 lg:mx-24 text-left backdrop-saturate-75 rounded-md">
+            <img class="lg:basis-1/2 object-fit lg:w-1/2 lg:h-1/2 rounded-md" src="/assets/image/AQUADRIVE.jpg" alt="">
+            <div
+                class="flex flex-col gap-10 text-left items-center justify-start basis-1/2 font-thin mx-10 lg:mx-0 text-lg text-black">
+                <h1 class="text-6xl font-serif capitalize text-center">Aquadrive</h1>
+                <p>The Aquadrive antivibration system will help you and your crew enjoy the peace and quiet of boating.
+                    By isolating the engine from the rest of your boat, noise and vibration are greatly reduced. Most
+                    installations result in a 50% or more reduction in cabin or cockpit noise and vibration. Aquadrive
+                    will also help to keep your driveline in good condition by minimizing wear and tear on the
+                    transmission and cutlass bearings. The propeller shaft is aligned to an Aquadrive thrust bearing,
+                    which absorbs the propeller thrust. A Constant Velocity (CV) shaft transmits engine power to the
+                    thrust bearing and propeller shaft. The CV shaft automatically adjusts to changes in the alignment
+                    between engine and thrust bearing and allows engine movements in every direction. Unlike standard
+                    installations, periodic realignment will not be required. The use of softer engine mounts, which
+                    isolate engine vibration from the hull, completes the system. Aquadrive antivibration system creates
+                    the necessary conditions for a smooth running, quiet boat.</p>
+                <p>Information sheet: <a class="text-emerald-500" target="_blank"
+                        href="/assets/docs/aquadrive-full-catalog.pdf"><i class="fa-solid fa-file-pdf"></i>&nbsp;Aquadrive Full Catalog</a></p>
+            </div>
+        </div>
+        {{template "footer" .}}
+    </div>
+</body>
+</html>
+
+{{end}}

@@ -1,0 +1,62 @@
+{{define "electronics"}}
+{{template "head" .}}
+
+<body x-data>
+    <div class="flex flex-col gap-16 min-h-screen">
+        {{template "nav" .}}
+        <h1 class="text-6xl font-serif capitalize text-center">Electronics</h1>
+        <div class="flex grow flex-col lg:flex-row gap-10 justify-center">
+            <div class="flex basis-1/3 md:border flex-col p-5 items-center gap-10 lg:mx-10 text-left rounded-md">
+                <div>
+                    <img class="rounded-md object-fit" src="/assets/image/dockmate.jpg"
+                        alt="">
+                </div>
+                <div
+                    class="flex flex-col gap-10 text-left items-center justify-start font-thin mx-10 lg:mx-0 text-lg text-black">
+                    <p>Dockmate® has proprietary DockControl software with highly-customizable settings that allows the
+                        owners to put their “personal touch” on how the TWIST 3-axis joystick feels and reacts.
+                        The smooth, variable-speed, fully-proportional thruster and throttle control was also something
+                        which was ONLY OFFERED with Dockmate® and has never been available with competitive products.
+                        Since the launch of Dockmate® US in 2018, the media coverage for the product has been nothing
+                        short
+                        of amazing and Dockmate® is the fastest growing wireless remote control for boats!
+                        Dockmate® has formed solid relationships with industry-leading companies such as Glendinning and
+                        VETUS who allow Dockmate® to connect DIRECTLY into their CAN bus network. This was NEVER allowed
+                        by
+                        any other wireless remote control company until Dockmate®
+                    </p>
+                    <p>
+                        Dockmate®, VETUS and Glendinning have shared a demo boat that traveled to many boats shows and
+                        it
+                        gave owners the opportunity to “try before they buy” even though Dockmate® offers a 30 day
+                        satisfaction, money back guarantee. Trusted by the leading brands of thrusters and electronics
+                        controls, advanced technology, customizable software, and fail-safe technology give Dockmate®
+                        the
+                        successful ingredients for the wireless remote control system of the future.</p>
+                </div>
+            </div>
+            <div class="flex basis-1/3 md:border flex-col p-5 items-center gap-10 lg:mx-10 text-left rounded-md">
+                <div>
+                    <img class="rounded-md object-fit" src="/assets/image/glendinning.png"
+                        alt="">
+                </div>
+                <div
+                    class="flex flex-col gap-10 text-left items-center justify-start font-thin mx-10 lg:mx-0 text-lg text-black">
+                    <p>From mechanical control cables, cable and hose handling systems to sophisticated propulsion
+                        vessel control systems, Glendinning strives to create innovative products that fulfill customers
+                        needs, solve problems as well as provide new feature sets for various markets. Glendinning
+                        supplies the world with innovative solutions. Established in 1972, Glendinning Products has
+                        built a reputation for quality and innovation. This recognition comes from a continuous
+                        commitment to manufacturing quality, leading-edge products and providing superior service. </p>
+                    <p> ADR's trained technicians provide support ranging from simple troubleshooting to repair and
+                        installation of complex electronic systems. </p>
+                </div>
+            </div>
+        </div>
+        {{template "footer" .}}
+    </div>
+</body>
+
+</html>
+
+{{end}}

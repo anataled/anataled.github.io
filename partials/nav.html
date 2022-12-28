@@ -1,0 +1,119 @@
+{{define "nav"}}
+<div x-data="{dropdown: false}" id="nav"
+    class="flex top-0 left-0 z-50 font-sans bg-gradient-to-tr from-sky-900 to-blue-900 font-bold text-slate-100 flex-wrap text-lg flex-initial justify-around lg:justify-start items-center gap-x-10 gap-y-5">
+    <a href="/" class="w-1/3 lg:w-1/12 h-auto my-5 order-first"><img class="invert" src="/assets/image/logo.webp" alt=""></a>
+    <div x-cloak :class="$store.menu ? 'flex' : 'hidden lg:flex'" id="navlinks" class="order-last flex-wrap lg:basis-auto basis-full items-center justify-center mb-5 lg:-mb-5 lg:-order-last gap-5 lg:gap-10">
+        <div class="flex-initial">
+            <a href="/about">About</a>
+        </div>
+        <div class="flex-initial overflow-visible relative select-none">
+            <span @click.outside="dropdown = false" @click="dropdown = !dropdown"
+                class="cursor-pointer">Products&nbsp;&nbsp;<span><i
+                        :class="dropdown ? 'fa-angle-right' : 'fa-angle-down'" class="fa-solid"></i></span></span>
+            <div x-show="dropdown" x-transition x-cloak
+                class="z-50 no-scrollbar overscroll-contain fixed lg:absolute top-0 left-0 lg:top-full w-screen h-screen lg:h-auto lg:w-72 lg:rounded-md overflow-y-scroll shadow-lg text-slate-200 lg:text-gray-700 bg-gradient-to-tr from-sky-700 to-blue-900 lg:bg-none lg:bg-white ring-1 ring-black ring-opacity-5"
+                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                <div class="py-1 text-md" role="none">
+                    <div class="block px-4 py-2 lg:hover:bg-gray-100 lg:hover:text-gray-900" role="menuitem"
+                        tabindex="-1" id="menu-item-0">
+                        <span>Engines</span>
+                        <div class="mt-1 ml-5">
+                            <span>Inboard Engines</span>
+                            <div class="mt-1 ml-10">
+                                <ul class="list-none font-thin">
+                                    <li><a class="hover:underline" href="/inboard_engines?q=Baudouin%20">Baudouin</a>
+                                    </li>
+                                    <li><a class="hover:underline" href="/inboard_engines?q=Scania%20">Scania</a></li>
+                                    <li><a class="hover:underline"
+                                            href="/caterpillar">Caterpillar</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-1 ml-5">
+                            <span>Outboard Engines</span>
+                            <div class="mt-1 ml-10">
+                                <ul class="list-none font-thin">
+                                    <li><a class="hover:underline" href="/outboard_engines?q=Neander%20">Neander Motors</a>
+                                    </li>
+                                    <li><a class="hover:underline" href="/outboard_engines?q=OXE%20">OXE Diesel</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" block px-4 py-2 lg:hover:bg-gray-100 lg:hover:text-gray-900" role="menuitem"
+                        tabindex="-1" id="menu-item-0">
+                        <span>Powertrain</span>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/transmissions?q=ZF%20">ZF</a></span>
+                        </div>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/transmissions?q=Twin%20Disc%20">Twin Disc</a></span>
+                        </div>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/aquadrive">Aquadrive</a></span>
+                        </div>
+                    </div>
+                    <div class=" block px-4 py-2 lg:hover:bg-gray-100 lg:hover:text-gray-900" role="menuitem"
+                        tabindex="-1" id="menu-item-0">
+                        <span>Waterjets</span>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline"
+                                    href="/waterjets?q=Alamarin-Jet">Alamarin-Jet</a></span>
+                        </div>
+                    </div>
+                    <div class=" block px-4 py-2 lg:hover:bg-gray-100 lg:hover:text-gray-900" role="menuitem"
+                        tabindex="-1" id="menu-item-0">
+                        <span>Generators</span>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/generators?q=Northern%20Lights%20">Northern
+                                    Lights</a></span>
+                        </div>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/generators?q=Kohler%20">Kohler</a></span>
+                        </div>
+                    </div>
+                    <div class=" block px-4 py-2 lg:hover:bg-gray-100 lg:hover:text-gray-900" role="menuitem"
+                        tabindex="-1" id="menu-item-0">
+                        <span>Electronics</span>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline"
+                                    href="/glendinning">Glendinning</a></span>
+                        </div>
+                        <div class="mt-1 ml-5 font-thin">
+                            <span><a class="hover:underline" href="/dockmate">Dockmate</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-initial">
+            <a href="/affiliates">Affiliates</a>
+        </div>
+        <div class="flex-initial">
+            <a @click="document.querySelectorAll('.flashing').forEach(el => el.classList.add('animate__animated', 'animate__flash'))" href="#contact">Contact</a>
+        </div>
+        <div class="flex-initial">
+            <a href="/careers">Careers</a>
+        </div>
+    </div>
+    <div class="grow hidden lg:block"></div>
+    <div class="hidden lg:block mr-10">
+        <span class="font-sans text-xl font-thin text-gray-300">
+            <a href="tel:1-877-ADR-2525 ">1-877-ADR-2525</a>
+        </span>
+    </div>
+    <!--
+    <div class="gap-5 flex-initial hidden lg:flex mr-10 text-sm font-bold">
+        <button
+            class="rounded-full bg-emerald-600 py-2 px-4 uppercase hover:bg-emerald-800 transition-colors">Sales</button>
+        <button
+            class="rounded-full bg-emerald-600 py-2 px-4 uppercase hover:bg-emerald-800 transition-colors">Service</button>
+    </div>
+    -->
+    <div @click="$store.menu = ! $store.menu" class="flex-initial mr-3 hover:cursor-pointer lg:hidden"
+        x-effect="console.log($store.menu)">
+        <i class="fa-solid fa-bars text-3xl p-5"></i>
+    </div>
+</div>
+{{end}}

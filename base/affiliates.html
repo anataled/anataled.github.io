@@ -1,0 +1,43 @@
+{{define "affiliates"}}
+{{template "head" .}}
+
+<body x-data>
+    <div class="flex flex-col gap-16 min-h-screen">
+        {{template "nav" .}}
+        <h1 class="text-6xl font-serif capitalize text-center">Affiliates</h1>
+        <div class="flex flex-col lg:flex-row gap-10 justify-center">
+            <div class="flex basis-1/2 md:border flex-col p-5 items-center gap-10 lg:mx-24 text-left rounded-md">
+                <img class="lg:basis-1/2 object-fit lg:w-1/2 lg:h-1/2 rounded-md" src="/assets/image/e4 power.jpg"
+                    alt="">
+                <div
+                    class="flex flex-col gap-10 text-left items-center justify-start basis-1/2 font-thin text-lg text-black">
+                    <p>ADR's goal to become a one-stop-shop for marine customers has led us to collaborate with other
+                        industry leaders and offer complementary systems and services. We are proud to work with E4
+                        Power to
+                        offer exhaust systems for marine and industrial applications.
+                    </p>
+                    E4 Power, LLC offers:
+                    <ul class="list-disc p-5">
+                        <li>On site survey</li>
+                        <li>Custom design, wet and dry</li>
+                        <li>
+                            Modular Exhaust System, 50% cost savings and over 50% weight savings are possible
+                        </li>
+                        <li>
+                            Exhaust Filters and Exhaust Treatment Systems (DPF, SCR)
+                        </li>
+                    </ul>
+                    Contact us for additional information regarding these products and services.
+                    </p>
+                    <p>Information sheet: <a class="text-emerald-500" target="_blank"
+                            href="/assets/docs/Modular Exhaust 20220525.pdf">Modular Exhaust 20220525.pdf</a></p>
+                </div>
+            </div>
+        </div>
+        {{template "footer" .}}
+    </div>
+</body>
+
+</html>
+
+{{end}}

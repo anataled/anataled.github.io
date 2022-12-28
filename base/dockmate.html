@@ -1,0 +1,44 @@
+{{define "dockmate"}}
+{{template "head" .}}
+
+<body x-data>
+    <div class="flex flex-col gap-16 min-h-screen">
+        {{template "nav" .}}
+        <div class="flex p-5 justify-center">
+            <div
+                class="flex items-center flex-col gap-10 lg:mx-24 text-left backdrop-saturate-75 rounded-md">
+                <img class="lg:basis-1/2 object-fit lg:w-1/2 lg:h-1/2 rounded-md" src="/assets/image/dockmate.jpg"
+                    alt="">
+                <div
+                    class="flex flex-col gap-10 text-left items-center justify-start font-thin text-lg text-black">
+                    <p>Dockmate® has proprietary DockControl software with highly-customizable settings that allows the
+                        owners to put their “personal touch” on how the TWIST 3-axis joystick feels and reacts.
+                        The smooth, variable-speed, fully-proportional thruster and throttle control was also something
+                        which was ONLY OFFERED with Dockmate® and has never been available with competitive products.
+                        Since the launch of Dockmate® US in 2018, the media coverage for the product has been nothing
+                        short
+                        of amazing and Dockmate® is the fastest growing wireless remote control for boats!
+                        Dockmate® has formed solid relationships with industry-leading companies such as Glendinning and
+                        VETUS who allow Dockmate® to connect DIRECTLY into their CAN bus network. This was NEVER allowed
+                        by
+                        any other wireless remote control company until Dockmate®
+                    </p>
+                    <p>
+                        Dockmate®, VETUS and Glendinning have shared a demo boat that traveled to many boats shows and
+                        it
+                        gave owners the opportunity to “try before they buy” even though Dockmate® offers a 30 day
+                        satisfaction, money back guarantee. Trusted by the leading brands of thrusters and electronics
+                        controls, advanced technology, customizable software, and fail-safe technology give Dockmate®
+                        the
+                        successful ingredients for the wireless remote control system of the future.</p>
+                </div>
+            </div>
+        </div>
+            <div class="grow"></div>
+        {{template "footer" .}}
+    </div>
+</body>
+
+</html>
+
+{{end}}
